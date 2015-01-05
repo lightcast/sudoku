@@ -25,13 +25,16 @@ function tableCreate() {
                 var cell = document.getElementById('sudokuTable').appendChild(document.createElement('div'));
                 var inputCellID  = x + '-' + y;
                 var input = document.createElement('input');
-                //input.setAttribute('type', 'text');
-               // input.setAttribute('id', inputCellID);
-               // input.className = 'inputCell';
-               // input.setAttribute('onkeypress','return event.charCode >= 48 && event.charCode <= 57' );
+                if(board[x-1][y-1] !== 0){
+                    cell.innerHTML = "<input type='text' id=\'" + inputCellID + "\' class='inputCell' readonly ='readonly' maxlength='1' value=\'" + board[x-1][y-1] + "\'/>" ;
+                }else{
+                    cell.innerHTML =  "<input type='text' id=\'" + inputCellID + "'\ class='inputCell' maxlength='1' value='' onkeypress='return event.charCode >= 48 && event.charCode <= 57' />";
+                }
+                cell.style.fontSize = '35px';
+                cell.style.textAlign = 'center';
 
 
-                cell.innerHTML =  "<input type='text' id=\'" + inputCellID + "'\ class='inputCell' maxlength='1' value='' onkeypress='return event.charCode >= 48 && event.charCode <= 57' />";
+
                 cell.style.border = ' solid 1px #a8aaae';
 
                 // in order to do the 9x9 grid we do the following
@@ -51,11 +54,6 @@ function tableCreate() {
                 cell.style.width = '55px';
                 cell.style.height = '55px';
                 cell.setAttribute('id', 'div');
-                if(board[x-1][y-1] !== 0){
-                    cell.innerHTML = "<input type='text' id=\'" + inputCellID + "\' class='inputCell' maxlength='1' value=\'" + board[x-1][y-1] + "\'/>" ;
-                    cell.style.fontSize = '35px';
-                    cell.style.textAlign = 'center';
-                }
             }
         }
 }
