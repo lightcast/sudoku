@@ -9,18 +9,42 @@
 <body>
 
 <p class="blocktext">Simply Sudoku</p>
+<!--
 
-<h1><time>00:00:00</time></h1>
-<button id="start">start</button>
-<button id="stop">stop</button>
-<button id="clear">clear</button>
+<div class="timer">
+    <h1><time>00:00:00</time></h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <button id="clear">clear</button>
+</div>
+-->
 
 <br />
-    <div id="sudokuTable"></div>
 
-<button id="submit" class="sitBtn" onclick="validSolution()">Check Board</button>
-<button id="restartGame" class="sitBtn" onclick="restartGame()">Restart Game</button>
-<button id="newGame" class="sitBtn" onclick="newGame()">New Game</button>
+<div class="board center">
+<div id="sudokuTable"></div>
+
+
+<div class="gameButtons">
+    <button id="submit" class="sitBtn gameButtons-button" onclick="validSolution()">Check Board</button>
+    <br/>
+    <button id="restartGame" class="sitBtn gameButtons-button" onclick="restartGame()">Restart Game</button>
+    <br/>
+    <button id="newGame" class="sitBtn gameButtons-button" onclick="newGame()">New Game</button>
+</div>
+
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 <script type="text/javascript" src="app.js"></script>
 
 
