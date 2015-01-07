@@ -40,6 +40,14 @@ p.blocktext {
     text-align: center;
 }
 
+.timer{
+    position: relative;
+    bottom: 50%;
+    left: 7%;
+    top: 10%;
+
+}
+
 .gameButtons {
     position:relative;
     bottom:50%;
