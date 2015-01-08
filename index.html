@@ -7,14 +7,14 @@
 
 </head>
 <body>
-
+<div class="board center">
 <p class="blocktext">Simply Sudoku</p>
 
 
-<div class="board center">
-<div id="sudokuTable"></div>
-</div>
 
+<div id="sudokuTable"></div>
+
+</div>
 <div class="gameButtons">
     <button id="submit" class="sitBtn gameButtons-button" onclick="validSolution()">Check Board</button>
     <br/>
@@ -32,54 +32,7 @@
 
 
 <script type="text/javascript" src="app.js"></script>
-
-
-
-<script>
-    var h1 = document.getElementsByTagName('h1')[0],
-            start = document.getElementById('start'),
-            stop = document.getElementById('stop'),
-            clear = document.getElementById('clear'),
-            seconds = 0, minutes = 0, hours = 0,
-            t;
-
-    function add() {
-        seconds++;
-        if (seconds >= 60) {
-            seconds = 0;
-            minutes++;
-            if (minutes >= 60) {
-                minutes = 0;
-                hours++;
-            }
-        }
-
-        h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-
-        timer();
-    }
-    function timer() {
-        t = setTimeout(add, 1000);
-    }
-    timer();
-
-
-    /* Start button */
-    start.onclick = timer;
-
-    /* Stop button */
-    stop.onclick = function() {
-        clearTimeout(t);
-    };
-
-    /* Clear button */
-    clear.onclick = function() {
-        h1.textContent = "00:00:00";
-        seconds = 0; minutes = 0; hours = 0;
-    };
-
-</script>
-
+<script type="text/javascript" src="timer.js"></script>
 
 </body>
 </html>
