@@ -78,7 +78,6 @@ p.blocktext {
 }
 
 .gameButtons{
-    width: 200px;
-    float: left;
-    clear:right;
+  position: absolute;
+    right: 20%;
 }
