@@ -122,7 +122,7 @@ function getHtmlBoard(){
 function restartGame(){
     clear.onclick(); // from timer js
     removeBoard();
-    tableCreate(createBoard());
+    //tableCreate(createBoard());
 }
 
 
@@ -139,7 +139,7 @@ function createArray(length) {
 }
 
 function newGame(){
-    var board = createBoard();
+   // var board = createBoard();
 // todo finish this
 }
 
