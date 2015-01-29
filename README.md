@@ -12,7 +12,7 @@ This is a simple sudoku game. Free feel to play it or look at the code.
 
 
 
-Here are some sample boards:
+Here are some sample boards:<br />
             invalid:
                               [[5, 3, 4, 6, 7, 8, 9, 1, 2],
                                [6, 7, 2, 1, 9, 0, 3, 4, 8],
