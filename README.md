@@ -4,7 +4,8 @@ I made this game sitting in the airport at ATL Georiga on my way to PTY Panama C
 the time since I had an 8hour layover.
 
 This is a simple sudoku game. Free feel to play it or look at the code.
-
+There is a firefox bug when viewing this page. There isn't anything wrong with the code but github reloads the page twice.
+Use chrome until I can host this page myself.....
 <b><a href='http://htmlpreview.github.io/?https://github.com/lightcast/sudoku/blob/master/index.html'>Click Here To Play</a></b>
 
 Here are some sample boards
