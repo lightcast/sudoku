@@ -120,8 +120,8 @@ function getHtmlBoard(){
 
 
 function restartGame(){
-    clear.onclick(); // from timer js
-    removeBoard();
+    //clear.onclick(); // from timer js
+    //removeBoard();
     //tableCreate(createBoard());
 }
 
