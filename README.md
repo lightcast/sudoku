@@ -7,12 +7,9 @@ This is a simple sudoku game. Free feel to play it or look at the code.
 
 <b><a href='http://htmlpreview.github.io/?https://github.com/lightcast/sudoku/blob/master/index.html'>Click Here To Play</a></b>
 
+Here are some sample boards
 
 
-
-
-
-Here are some sample boards:
             invalid:
                               [[5, 3, 4, 6, 7, 8, 9, 1, 2],
                                [6, 7, 2, 1, 9, 0, 3, 4, 8],
