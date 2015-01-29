@@ -15,21 +15,21 @@
 <div id="sudokuTable"></div>
 
 </div>
+
+
 <div class="gameButtons">
-    <button id="submit" class="sitBtn gameButtons-button" onclick="validSolution()">Check Board</button>
-    <br/>
-    <button id="restartGame" class="sitBtn gameButtons-button" onclick="restartGame()">Restart Game</button>
-    <br/>
-    <button id="newGame" class="sitBtn gameButtons-button" onclick="newGame()">New Game</button>
+    <button id="submit" class="gameButtons-button" onclick="validSolution()">Check Board</button>
+    <div style="clear:right; overflow:hidden;"></div>
+    <button id="restartGame" class="gameButtons-button" onclick="restartGame()">Restart Game</button>
+    <div style="clear:right;"></div>
+    <button id="newGame" class="gameButtons-button" onclick="newGame()">New Game</button>
+    <div class="timer">
+        <h1><time>00:00:00</time></h1>
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+        <button id="clear">clear</button>
+    </div>
 </div>
-
-<div class="timer">
-    <h1><time>00:00:00</time></h1>
-    <button id="start">start</button>
-    <button id="stop">stop</button>
-    <button id="clear">clear</button>
-</div>
-
 
 <script type="text/javascript" src="app.js"></script>
 <script type="text/javascript" src="timer.js"></script>

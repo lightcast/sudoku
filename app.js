@@ -2,10 +2,10 @@
  * Created by JD on 12/1/14.
  */
 
-function tableCreate() {
+function tableCreate(newBoard) {
         "use strict";
     var rowColor = 0;
-    var board = createBoard();
+    var board = newBoard;
         for(var x=1; x <=9; x++){
             rowColor += 1;
             var rightColor = 0;
@@ -13,18 +13,24 @@ function tableCreate() {
                 rightColor += 1;
                 //var cellID = parseInt(  (x + y));
                 var cell = document.getElementById('sudokuTable').appendChild(document.createElement('div'));
-                cell.classList.add("cell");
+
                 var inputCellID  = x + '-' + y;
                 var input = document.createElement('input');
+                cell.id = 'div-'+ inputCellID;
                 if(board[x-1][y-1] !== 0){
-                    cell.innerHTML = "<input type='text' id=\'" + inputCellID + "\' class='inputCell' readonly ='readonly' maxlength='1' value=\'" + board[x-1][y-1] + "\'/>" ;
+                    cell.innerHTML = "<input type='text' id=\'" + inputCellID + "\' class='inputCell' readonly ='readonly' value=\'" + board[x-1][y-1] + "\'/>" ;
                 }else{
-                    cell.innerHTML =  "<input type='text' id=\'" + inputCellID + "'\ class='inputCell' maxlength='1' value='' onkeypress='return event.charCode >= 48 && event.charCode <= 57' />";
+                    cell.innerHTML =  "<input type='text' id=\'" + inputCellID + "'\ class='inputCell' maxlength='1' value='' keydown='return (event.charCode >= 48 && event.charCode <= 57) || (event.charCode === 46) || (event.charCode === 8);'/>";
+
                 }
+
+
+
+
                 cell.style.fontSize = '35px';
                 cell.style.textAlign = 'center';
 
-
+                cell.classList.add("cell");
 
                 cell.style.border = ' solid 1px #a8aaae';
 
@@ -44,11 +50,28 @@ function tableCreate() {
                 // we finish styling the grid
                 cell.style.width = '55px';
                 cell.style.height = '55px';
-                cell.setAttribute('id', 'div');
+                //cell.setAttribute('id', 'div');
+
+                //console.log(cell);
             }
         }
 }
-tableCreate();
+tableCreate(createBoard());
+
+function createBoard(){
+    return  [[5, 0, 4, 0, 7, 0, 9, 0, 0],
+        [6, 0, 2, 1, 9, 0, 3, 4, 0],
+        [1, 9, 0, 3, 4, 0, 5, 6, 7],
+        [8, 0, 9, 0, 6, 1, 4, 0, 3],
+        [0, 0, 6, 8, 0, 3, 0, 9, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [9, 0, 1, 0, 3, 7, 0, 8, 4],
+        [2, 0, 7, 0, 1, 0, 6, 0, 5],
+        [0, 4, 0, 2, 0, 6, 1, 0, 0]];
+
+}
+
+
 
 function totalCount(board){
     var totalCount = 0;
@@ -125,28 +148,6 @@ function validateSquares(board){
     return true;
 }
 
-function createBoard(){
-    return [[5, 0, 4, 0, 7, 0, 9, 0, 0],
-        [6, 0, 2, 1, 9, 0, 3, 4, 0],
-        [1, 9, 0, 3, 4, 0, 5, 6, 7],
-        [8, 0, 9, 0, 6, 1, 4, 0, 3],
-        [0, 0, 6, 8, 0, 3, 0, 9, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [9, 0, 1, 0, 3, 7, 0, 8, 4],
-        [2, 0, 7, 0, 1, 0, 6, 0, 5],
-        [0, 4, 0, 2, 0, 6, 1, 0, 0]];
-}
-  /*return[  [5, 3, 4, 6, 7, 8, 9, 1, 2],
-        [6, 7, 2, 1, 9, 5, 3, 4, 8],
-        [1, 9, 8, 3, 4, 2, 5, 6, 7],
-        [8, 5, 9, 7, 6, 1, 4, 2, 3],
-        [4, 2, 6, 8, 5, 3, 7, 9, 1],
-        [7, 1, 3, 9, 2, 4, 8, 5, 6],
-        [9, 6, 1, 5, 3, 7, 2, 8, 4],
-        [2, 8, 7, 4, 1, 9, 6, 3, 5],
-        [3, 4, 5, 2, 8, 6, 1, 7, 0]];*/
-
-
 
 
 function validSolution(){
@@ -154,6 +155,8 @@ function validSolution(){
 
     //console.log(board);
     var msg;
+
+   // console.log(validSolution2(board));
 
     if(totalCount(board) && validateHorizontal(board) && validateVertical(board) && validateSquares(board)){
         msg = 'Congratulations you completed the board!!'
@@ -176,14 +179,68 @@ function getHtmlBoard(){
        }
        outerArray.push(innerArray);
    }
+
+//    console.log(outerArray);
     return outerArray;
 }
 
 
 function restartGame(){
+    clear.onclick(); // from timer js
+    removeBoard();
+    tableCreate(createBoard());
+}
 
+
+// keep just in case
+
+function createArray(length) {
+    var arr = new Array(length || 0),
+        i = length;
+    if (arguments.length > 1) {
+        var args = Array.prototype.slice.call(arguments, 1);
+        while (i--) arr[length - 1 - i] = createArray.apply(this, args);
+    }
+    return arr;
 }
 
 function newGame(){
+    var board = createBoard();
+// todo finish this
+}
+
+
+function removeBoard(){
+    // remove all elements before we create a new board
+    var myNode = document.getElementById("sudokuTable");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
 
 }
+
+
+
+
+function equals45(n){
+    return n == 45;
+}
+
+function validSolution2(board){
+    var sumh = [0,0,0,0,0,0,0,0,0];
+    var sumv = [0,0,0,0,0,0,0,0,0];
+    osums = [[0,0,0],[0,0,0],[0,0,0]];
+    for (var i=0;i<9;i++){
+        for (var j=0;j<9;j++){
+            sumh[i] += board[i][j];
+            sumv[j] += board[i][j];
+            osums[Math.floor(i/3)][Math.floor(j/3)] += board[i][j];
+        }
+    }
+    for (var i=0;i<3;i++) if (!osums[i].every(equals45)) return false;
+    return (sumh.every(equals45) && sumv.every(equals45));
+}
+
+
+
+

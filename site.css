@@ -4,7 +4,7 @@ body {
 }
 
 .board {
-    width:50%;
+    width: 50%;
 }
 
 .center {
@@ -18,7 +18,7 @@ body {
     height: 69px;
     float:left;
     position: relative;
-    font-family: Arial;
+
 }
 
 #sudokuTable{
@@ -39,24 +39,25 @@ p.blocktext {
 }
 
 .timer{
-    position: relative;
-    bottom: 50%;
-    left: 7%;
-    top: 10%;
+
 
 }
 
-.gameButtons {
-    position:relative;
-    bottom:50%;
-    right: 40%;
-    top: 10%
-    width: 200px;
+
+.inputCell {
+    width: 45px;
+    background-color: #f1f1f1;
+    height: 48px;
+    font-size: 35px;
+    text-align: center;
+    font-family: Arial;
 }
+
+
+
+
 .gameButtons-button{
-    left: 45%;
     margin-bottom: 2%;
-    position: relative;
     background: #3498db;
     background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
     background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -71,16 +72,13 @@ p.blocktext {
     font-size: 20px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
-    width: 15%
+    clear:right;
+    overflow:hidden;
+
 }
 
-
-.inputCell {
-    width: 45px;
-    background-color: #f1f1f1;
-    height: 48px;
-    font-size: 35px;
-    text-align: center;
-    font-family: Arial;
+.gameButtons{
+    width: 200px;
+    float: left;
+    clear:right;
 }
-
