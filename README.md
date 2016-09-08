@@ -4,7 +4,7 @@ I made this game sitting in the airport at ATL Georiga on my way to PTY Panama C
 the time since I had an 8hour layover.
 
 This is a simple sudoku game. Free feel to play it or look at the code.
-<b><a href="https://lightcast.github.io/chess/">Click Here To Play</a></b>
+<b><a href="https://lightcast.github.io/sudoku/">Click Here To Play</a></b>
 
 Here are some sample boards
 
